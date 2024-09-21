@@ -1,6 +1,16 @@
 .detail{
-    flex: 1;
-
+    padding: 30px;
+    background-color: rgb(0, 0, 0);
+    width: max-content;
+    height: max-content;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521);
     .user{
         padding: 30px 20px;
         display: flex;
@@ -8,6 +18,7 @@
         align-items: center;
         gap: 15px;
         border-bottom: 1px solid #dddddd35;
+        /* margin-bottom: 430px; */
 
         img{
             width: 100px;
@@ -20,7 +31,7 @@
         padding: 20px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        /* gap: 20px; */
 
         .option{
             .title{
@@ -96,3 +107,21 @@
         }
     }
 }
+
+
+/* .backButton {
+    background-color: #5183fe;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .backButton {
+        display: block;
+        margin-bottom: 10px;
+    }
+} */

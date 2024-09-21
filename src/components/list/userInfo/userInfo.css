@@ -1,3 +1,42 @@
+/* .UserInfo {
+    margin: 10px;
+  }
+  
+  .user {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .user h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .userCard {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .userCard h3 {
+    margin: 0;
+  }
+  
+  .userCard p {
+    color: #555;
+  }
+   */
 .UserInfo{
     padding: 20px;
     display: flex;
@@ -12,8 +51,9 @@
         display: flex;
         align-items: center;
         gap: 20px;
-
+        cursor: pointer;
         img{
+            
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -30,4 +70,11 @@
             cursor: pointer;
         }
     }
+}
+
+
+@media (max-width: 390) {
+  .user img{
+    display : none;
+  }
 }

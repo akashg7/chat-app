@@ -1,0 +1,48 @@
+.chatSection {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+  }
+  
+  .backButton {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .backButton img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .chatInput {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(17, 25, 40, 0.5);
+  }
+  
+  .chatInput input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px;
+  }
+  
+  .chatInput button {
+    background-color: #5183fe;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+  }

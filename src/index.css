@@ -7,26 +7,27 @@
 }
 
 body{
-  background-image: url(/bg.jpg);
+  /* background-image: url(/bg.jpg); */
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   /* color: black; */
-  color: white;
+  color: black;
+
 }
 
 .container{
   width: 100vw;
-  height: 100vh;
-  /* background-color: white; */
-  background-color: rgba(17 , 25 , 40 , 0.75);
+  height: 102vh;
+  background-color: rgb(255, 255, 255);
+  /* background-color: rgba(17 , 25 , 40 , 0.75); */
   /* background-color: rgba(0, 0, 0, 0.75); */
   backdrop-filter: blur(19px) saturate(180%);
-  border-radius: 12px;
+  /* border-radius: 12px; */
   border :1px solid rgba(255 , 255 , 255 , 0.125);
   display :flex;
-  
+  /* color: #ffffff; */
 }
 
 .loading{
@@ -121,3 +122,53 @@ body{
 .btn-90:hover .blobs:after {
   transform: translateX(100%);
 }
+
+
+.container {
+  position: relative; /* Make it a positioning context */
+}
+
+.pink-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  z-index: 1; /* Ensure it's on top */
+}
+
+
+
+/* Styles for back button in mobile view */
+/* .back-button {
+  display: none;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+} */
+
+/* Media query for mobile view */
+ @media (max-width: 768px) {
+ 
+
+  .info{
+    border-radius: 50%;
+  }
+  .container {
+    position:static;
+    /* width: 203vw;
+    height: 100vh; */
+  }
+  .body{
+    height: 200vh;
+  }
+ }
+
+/* 
+ html, body {
+  overflow-x: hidden;
+} */

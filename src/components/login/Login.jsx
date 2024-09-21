@@ -5,6 +5,7 @@ import {createUserWithEmailAndPassword , signInWithEmailAndPassword} from "fireb
 import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore"; 
 import upload from "../../lib/upload";
+import ChatList from "../list/chatList/ChatList"
 
 const Login = ()=>{
     const [avatar ,setAvatar] = useState({
@@ -54,7 +55,9 @@ const Login = ()=>{
             console.log(err)
             toast.error(err.message)
         }finally{
+
             setLoading(false)
+            {<ChatList/>}
         }
     }
 

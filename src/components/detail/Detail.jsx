@@ -1,110 +1,82 @@
-// import { auth } from "../firebase"
-import { useUserStore} from "../../lib/userStore.js"
-import { useChatStore} from "../../lib/chatStore.js"
-import { db } from "../firebase"
+import { useUserStore } from "../../lib/userStore.js";
+import { useChatStore } from "../../lib/chatStore.js";
+import { db } from "../firebase.js";
 import { doc, updateDoc, arrayRemove, arrayUnion } from "firebase/firestore";
-import {auth} from "../firebase"
-import "./detail.css"
+import { auth } from "../firebase.js";
+import "./detail.css";
+import React, { useEffect, useRef, useState } from "react";
+import "../list/chatList/addUser/addUser.css";
+// import {auth} from "../../firebase"
 
-const Detail = ()=>{
-    const{chatId , user , isCurrentUserBlocked , isReceiverBlocked , changeBlock} = useChatStore()
-    const {currentUser} = useUserStore()
-    const handleBlock = async ()=>{
-        if (!user) return 
+const Detail = ({ mode , set , reff }) => {
+  // const isMobile = window.innerWidth <= 768;
+  const { chatId, user, isCurrentUserBlocked, isReceiverBlocked, changeBlock } =
+    useChatStore();
+  const { currentUser } = useUserStore();
+  const handleBlock = async () => {
+    if (!user) return;
 
-        const userDocRef = doc(db , "users" ,currentUser.id )
-        try{
-            await updateDoc(userDocRef , {
-                blocked : isReceiverBlocked ? arrayRemove(user.id) : arrayUnion(user.id),
-            })
-            changeBlock()
-        } catch(err){
-            console.log(err)
-        }
+    const userDocRef = doc(db, "users", currentUser.id);
+    try {
+      await updateDoc(userDocRef, {
+        blocked: isReceiverBlocked ? arrayRemove(user.id) : arrayUnion(user.id),
+      });
+      changeBlock();
+    } catch (err) {
+      console.log(err);
     }
-    return (
-        <div className="detail">
-            <div className="user">
-                <img src={user?.avatar || "./avatar.png"} alt="" />
-                <h2>{user?.username}</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div className="info">
-                <div className="option">
-                    <div className="title">
-                        <span>Chat Settings</span>
-                        <img src="./arrowUp.png" alt="" />
-                    </div>
-                </div>
+  };
 
-                <div className="option">
-                    <div className="title">
-                        <span>Privacy & help</span>
-                        <img src="./arrowUp.png" alt="" />
-                    </div>
-                </div>
+//   const [isVisible, setIsVisible] = useState(true); // Control the visibility of the card
+//   const cardRef = useRef(null); // Reference to the user card
 
+//   // This effect listens for clicks outside the userCard
+//   useEffect(() => {
+//     const handleClickOutside = (event) => {
+//       // Check if the clicked element is outside the card
+//       if (cardRef.current && !cardRef.current.contains(event.target)) {
+//         setIsVisible(false); // Hide the card
+//       }
+//     };
 
+//     // Attach the event listener to the whole document
+//     document.addEventListener("mousedown", handleClickOutside);
 
-                <div className="option">
-                    <div className="title">
-                        <span>Chat Settings</span>
-                        <img src="./arrowUp.png" alt="" />
-                    </div>
-                </div>
+//     // Cleanup event listener on component unmount
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   }, [cardRef]);
 
+  return (
+    <>
+ { mode && (
+    <>
+    {/* Conditionally render the card based on visibility */}
+    
 
-                <div className="option">
-                    <div className="title">
-                        <span>Shared photos</span>
-                        <img src="./arrowDown.png" alt="" />
-                    </div>
-                    <div className="photos">
-                       
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                            <img src="https://i.pinimg.com/736x/a4/6b/ba/a46bba75ea009158ac114b218ca11640.jpg" alt="" />
-                            <span>photo_2024_2.png</span>
-                            </div>
-                            
-                       
-                        <img src="./download.png" className="icon" alt="" />
-                        </div>
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                            <img src="https://i.pinimg.com/736x/a4/6b/ba/a46bba75ea009158ac114b218ca11640.jpg" alt="" />
-                            <span>photo_2024_2.png</span>
-                            </div>
-                            
-                       
-                        <img src="./download.png" className="icon" alt="" />
-                        </div>
-                        <div className="photoItem">
-                            <div className="photoDetail">
-                            <img src="https://i.pinimg.com/736x/a4/6b/ba/a46bba75ea009158ac114b218ca11640.jpg" alt="" />
-                            <span>photo_2024_2.png</span>
-                            </div>
-                            
-                       
-                        <img src="./download.png" className="icon" alt="" />
-                        </div>
-                    </div>
-                </div>
+   
+  
+  <div className="detail" ref={reff}>
+      <div className="user">
+          <img src={user?.avatar || "./avatar.png"} alt="" />
+          <h2>{user?.username}</h2>
+          <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div className="info">
 
-                <div className="option">
-                    <div className="title">
-                        <span>Shared Files</span>
-                        <img src="./arrowUp.png" alt="" />
-                    </div>
-                </div>
-                <button onClick={handleBlock} >{
-                    isCurrentUserBlocked ? "You are Blocked!" : isReceiverBlocked ? "User blocked" : "Block User"
-                    }</button>
-                <button className="logout" onClick={()=>auth.signOut()}>Logout</button>
-            </div>
-        </div>
-    )
-}
+          <button onClick={handleBlock} >{
+              isCurrentUserBlocked ? "You are Blocked!" : isReceiverBlocked ? "User blocked" : "Block User"
+              }</button>
+          <button className="logout" onClick={()=>auth.signOut()}>Logout</button>
+      </div>
+  </div>
+  </>
+  )}
+  </>
 
+  );
+};
 
-export default Detail
+export default Detail;
+

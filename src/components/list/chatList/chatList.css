@@ -71,18 +71,14 @@
 
 
 
-
-
-/* .chatList {
+/* General layout for larger screens */
+.chatList {
   flex: 1;
-  overflow-y: scroll;
-  max-width: 300px; 
-  min-width: 200px;
-  padding: 20px;
+  overflow: scroll;
 }
 
 .chat {
-  flex: 2;
+  flex: 4;
   border-left: 1px solid #dddddd35;
   border-right: 1px solid #dddddd35;
   height: 100%;
@@ -90,28 +86,122 @@
   flex-direction: column;
 }
 
-.detail {
-  flex: 1;
-  padding: 20px;
-  overflow-y: scroll;
-} */
-
-/* Adjust layout on smaller screens */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .chatList {
-      max-width: 100%;
-      min-width: 100%;
-      padding: 10px;
+    /* width: 75px;  */
+    overflow: hidden; 
+    .item{
+      margin-left: 20px;
+
+    }
   }
+
+  .chatList .search {
+    display: none; 
+  }
+
+  .chatList .item {
+    padding: 10px; /* Adjust padding to be smaller */
+  }
+
+  .chatList .item img {
+    width: 50px; /* Keep profile pictures visible */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .chatList .item .texts {
+    display: none; /* Hide text details in chatList */
+  }
+
+  /* Make .chat take the full width */
   .chat {
-      max-width: 100%;
-      min-width: 100%;
-      padding: 10px;
-      height: auto;
+    flex: 1;
+    width: 100%;
+    border-left: none;
+    border-right: none;
   }
-  .detail {
-      max-width: 100%;
-      min-width: 100%;
-      padding: 10px;
+
+  /* Add a back button to the .chat div for mobile */
+  .chat .top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    /* Back button on the top left */
+    .back-button {
+      display: block;
+      cursor: pointer;
+    }
   }
+}
+
+
+
+
+/* 
+ .chatList {
+  flex: 1;
+  overflow: scroll;
+}
+.chatList__search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.chatList__searchBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  background-color: rgba(17 , 25 , 40 , 0.5);
+  border-radius: 10px;
+  padding: 10px;
+}
+.chatList__searchBar input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  flex:1;
+}
+.chatList__searchBar img {
+  width: 20px;
+  height: 20px;
+}
+.chatList__add {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(17 , 25 , 40 , 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.chatList__item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #dddddd35;
+}
+.chatList__item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chatList__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chatList__texts span {
+  font-weight: 500;
+}
+.chatList__texts p {
+  font-size: 14px;
+  font-weight: 300;
 } */

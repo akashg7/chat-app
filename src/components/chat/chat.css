@@ -1,5 +1,5 @@
 .chat{
-    flex : 2;
+    flex : 4;
     border-left: 1px solid #dddddd35;
     border-right: 1px solid #dddddd35;
     height: 100%;
@@ -47,6 +47,7 @@
             img{
                 height: 20px;
                 width: 20px;
+                cursor: pointer;
             }
         }
 
@@ -70,16 +71,11 @@
 
                 .text{
                     p{
-                        background-color: #5183fe;
+                        background-color: #5182fe80;
                         align-self: flex-end;
                     }
                 }
-                /* img{
-                border-radius: 5%;
-                object-fit: cover;
-                width: 400px;
-                height: 400px;
-                } */
+        
             }
             img{
                 width: 30px;
@@ -103,7 +99,7 @@
 
               p{
                 padding: 20px;
-                background-color: rgba(17 , 25 , 40 , 0.3);
+                background-color: rgba(0, 0, 0, 0.109);
                 border-radius: 10px;
               }
               span{
@@ -172,118 +168,24 @@
         }
     }
 }
-
-/* 
+.chat {
+    flex: 4;
+    border-left: 1px solid #dddddd35;
+    border-right: 1px solid #dddddd35;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 @media (max-width: 768px) {
     .chat {
-      flex: 1; 
-      border-left: none;
-      border-right: none;
-    }
-  
-    .top {
-      padding: 10px; 
-      flex-direction: column; 
-  
-      .user {
-        gap: 10px; 
-        img {
-          width: 50px; 
-          height: 50px;
-        }
-        .texts span {
-          font-size: 16px;
-        }
-        .texts p {
-          font-size: 12px; 
-        }
-      }
-  
-      .icons {
-        gap: 10px; 
-        img {
-          width: 15px;
-          height: 15px; 
-        }
-      }
-    }
-  
-    .centre {
-      padding: 10px; 
-      gap: 10px;
-      
-      .message {
-        max-width: 85%;
-        img {
-          width: 25px; 
-          height: 25px;
-        }
-        .text p {
-          padding: 15px; 
-          font-size: 14px;
-        }
-      }
-    }
-  
-    .bottom {
-      padding: 10px; 
-      gap: 10px;
-      img {
-        width: 18px;
-        height: 18px;
-      }
-      input {
-        font-size: 14px; 
-        padding: 10px; 
-      }
-      .sendButton {
-        padding: 8px 16px; 
-      }
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .top .user img {
-      width: 40px; 
-      height: 40px;
-    }
-  
-    .top .texts span {
-      font-size: 14px;
-    }
-  
-    .centre {
-      .message {
-        max-width: 90%; 
-        .text p {
-          padding: 10px;
-          font-size: 12px;
-        }
-      }
-    }
-  
-    .bottom {
-      img {
-        width: 15px;
-        height: 15px; 
-      }
-      input {
-        font-size: 
-      }
-      .sendButton {
-        padding: 
-      }
-    }
-  }
-  
+        flex: 1;
+        /* width: 25px; */
+        border-left: none;
+        border-right: none;
 
-  /* .centre {
-    flex: 1;
-    overflow-y: auto; 
-} */
-
-/* @media (max-width: 768px) {
-    .centre {
-        max-height: 300px; 
+        .bottom{
+            gap: 5px;
+        }
     }
-} */ 
+}
+  

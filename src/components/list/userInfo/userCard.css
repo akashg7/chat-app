@@ -1,0 +1,83 @@
+.userCard {
+    position: absolute;
+    /* top: 200px; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #2f2e2e; */
+    background-color: rgb(12, 12, 12);
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521);
+    width: 300px;
+    /* position: absolute; */
+    top: 255px;
+    /* bottom: 0; */
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: -60px; /* Adjust this to overlap the image over the card */
+    box-shadow: 0 4px 8px rgb(107, 104, 104); /* Give a subtle shadow to the profile picture */
+  }
+  
+  .profile-name {
+    font-size: 20px;
+    margin: 15px 0 5px 0;
+    /* color: #333;  */
+    color: white;
+    text-align: center;
+  }
+  
+  /* Email specific styling */
+  .profile-email {
+    font-size: 16px;
+    /* color: #333; */
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .logout{
+    margin-top: 50px;
+    padding: 15px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    /* border-color: black; */
+    border-width: 2px;
+    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521)
+  }
+  .logout:hover{
+    background-color: black;
+    color : white;
+    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521)
+    /* border-color: white; */
+  }
+
+
+
+  /* padding: 30px;
+  background-color: rgba(17, 25, 40, 0.781);
+  width: max-content;
+  height: max-content;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto; */
