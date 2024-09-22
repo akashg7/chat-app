@@ -29,7 +29,7 @@ const App = () => {
     }
   }, [chatId]);
 
-  if (isLoading) return <div class="loader"></div>;
+  if (isLoading) return <div className="loader"></div>;
 
   return (
     <div className="container">
@@ -51,86 +51,3 @@ const App = () => {
 };
 
 export default App;
-
-{/* <div className='container'>
-{ currentUser ? (    
-  <>
-     <List/>
-      {chatId && <Chat/> } 
-   {chatId && <Detail/>}
-  </> ) : ( 
-    <Login/>
-)}
-<Notification/>
-
-</div> */}
-
-// import Detail from "./components/detail/Detail.jsx"
-// import Chat from "./components/chat/Chat.jsx"
-// import React, { useState } from 'react';
-// import ChatList from './components/list/chatList/ChatList.jsx';
-
-
-// function App() {
-//     const [showChatList, setShowChatList] = useState(true);
-//     const [showChat, setShowChat] = useState(false);
-//     const [showDetail, setShowDetail] = useState(false);
-
-//     return (
-//         <div className="appContainer">
-//             {showChatList && (
-//                 <ChatList
-//                     onChatClick={() => {
-//                         setShowChat(true);
-//                         setShowChatList(false);
-//                     }}
-//                     onDetailClick={() => {
-//                         setShowDetail(true);
-//                         setShowChatList(false);
-//                     }}
-//                 />
-//             )}
-
-//             {showChat && (
-//                 <Chat
-//                     onBackClick={() => {
-//                         setShowChatList(true);
-//                         setShowChat(false);
-//                     }}
-//                     onDetailClick={() => {
-//                         setShowDetail(true);
-//                         setShowChat(false);
-//                     }}
-//                 />
-//             )}
-
-//             {showDetail && (
-//                 <Detail
-//                     onBackClick={() => {
-//                         setShowChatList(true);
-//                         setShowDetail(false);
-//                     }}
-//                 />
-//             )}
-//         </div>
-//     );
-// }
-
-// export default App;
-
-
-
-
-{/* <div className='container'>
-{ currentUser ? (    
-  <>
-  
-    <List/> 
-   {chatId && <Chat/>}
-   {chatId && <Detail/>}
-  </> ) : ( 
-    <Login/>
-)}
-<Notification/>
-
-</div> */}
