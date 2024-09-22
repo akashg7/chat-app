@@ -10,7 +10,11 @@
     right: 0;
     left: 0;
     margin: auto;
-    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521);
+    color: white;
+    &:hover{
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.508);
+        transition: box-shadow 0.3s ease;
+    }
     .user{
         padding: 30px 20px;
         display: flex;
@@ -91,14 +95,14 @@
         } 
         button{
             padding: 10px ;
-            background-color: rgba(230 , 74 , 105 , 0.5);
+            background-color: rgb(205, 23, 59);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
 
             &:hover{
-                background-color: rgba(230 , 74 , 105 , 1);
+                background-color: rgb(255, 0, 51);
             }
             &.logout{
                 padding: 10px;

@@ -66,9 +66,9 @@ const Detail = ({ mode , set , reff }) => {
       <div className="info">
 
           <button onClick={handleBlock} >{
-              isCurrentUserBlocked ? "You are Blocked!" : isReceiverBlocked ? "User blocked" : "Block User"
+              isCurrentUserBlocked ? "You are Blocked!" : isReceiverBlocked ? "Unblock" : "Block User"
               }</button>
-          <button className="logout" onClick={()=>auth.signOut()}>Logout</button>
+          {/* <button className="logout" onClick={()=>auth.signOut()}>Logout</button> */}
       </div>
   </div>
   </>

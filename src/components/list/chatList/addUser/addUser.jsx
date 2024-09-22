@@ -84,17 +84,18 @@ const AddUser = ({ reff }) => {
   };
 
   return (
-    <div className="addUser" ref={reff}>
+    <div className="addUsers" ref={reff}>
       <form onSubmit={handleSearch}>
         <input type="text" placeholder="Username" name="username" />
         <button>Search</button>
       </form>
 
       {user && (
-        <div className="user">
-          <div className="detail">
+        <div className="new-user">
+          <div className="user-detail">
             <img src={user.avatar || "./avatar.png"} alt="" />
             <span>{user.username}</span>
+            
           </div>
           <button onClick={handleAdd}>Add User</button>
         </div>

@@ -186,7 +186,7 @@ const ChatList = () => {
   }, [currentUser.id]);
 
   const handleSelect = async (chat) => {
-    
+
     const userChats = chats.map((item) => {
       const { user, ...rest } = item;
       return rest;
@@ -257,7 +257,7 @@ const ChatList = () => {
           key={chat.chatId}
           onClick={() => {
             handleSelect(chat);
-          }}
+          }} 
           style={{
             backgroundColor: chat?.isSeen ? "transparent" : "#5183fe",
           }}

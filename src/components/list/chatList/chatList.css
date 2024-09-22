@@ -12,7 +12,7 @@
         align-items: center;
         gap: 20px;
         flex: 1;
-        background-color: rgba(17 , 25 , 40 , 0.5);
+        background-color: rgb(0, 0, 0);
         border-radius: 10px;
         padding: 10px;
 
@@ -31,7 +31,7 @@
     .add{
       width: 36px;
       height: 36px;
-      background-color: rgba(17 , 25 , 40 , 0.5);
+      background-color: rgb(0, 0, 0);
       padding: 10px;
       border-radius: 10px;
       cursor: pointer;
@@ -89,7 +89,7 @@
 @media (max-width: 768px) {
   .chatList {
     /* width: 75px;  */
-    overflow: hidden; 
+    overflow: scroll; 
     .item{
       margin-left: 20px;
 
@@ -97,7 +97,7 @@
   }
 
   .chatList .search {
-    display: none; 
+    /* display: none;  */
   }
 
   .chatList .item {
@@ -112,7 +112,11 @@
   }
 
   .chatList .item .texts {
-    display: none; /* Hide text details in chatList */
+    /* display: none;  */
+    /* p{
+      
+    } */
+    
   }
 
   /* Make .chat take the full width */

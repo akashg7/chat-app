@@ -1,6 +1,6 @@
-.addUser{
+.addUsers{
     padding: 30px;
-    background-color: rgba(17, 25, 40, 0.781);
+    background-color: rgb(0, 0, 0);
     width: max-content;
     height: max-content;
     border-radius: 10px;
@@ -10,6 +10,12 @@
     right: 0;
     left: 0;
     margin: auto;
+    color: white;
+    &:hover{
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.544);
+        transition: box-shadow 0.3s ease;
+    }
+    
 
     form{
         display: flex;
@@ -26,17 +32,26 @@
             padding: 20px;
             border-radius: 10px;
             border: none;
-            background-color: #1a73e8;
-            color: white;
+            background-color: #ffffff;
+            color: black;
             cursor: pointer;
+            &:hover{
+                background-color: #e7e6e6;
+            }
         }
-    }.user{
-        margin-top: 50px;
+    }.new-user{
+        margin-top: 20px;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
-
-        .detail{
+        border-radius: 12px;
+        padding: 10px;
+        &:hover{
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.544);
+        }
+        
+        .user-detail{
             display: flex;
             gap: 20px;
             align-items: center;
@@ -55,6 +70,12 @@
             background-color: #1a73e8;
             color: white;
             cursor: pointer;
+            background-color: #ffffff;
+            color: black;
+            cursor: pointer;
+            &:hover{
+                background-color: #e7e6e6;
+            }
         }
     }
 }

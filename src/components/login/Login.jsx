@@ -6,7 +6,7 @@ import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore"; 
 import upload from "../../lib/upload";
 import ChatList from "../list/chatList/ChatList"
-
+import List from "../list/List"
 const Login = ()=>{
     const [avatar ,setAvatar] = useState({
         file : null,
@@ -14,7 +14,6 @@ const Login = ()=>{
     })
 
     const [loading , setLoading] = useState(false)
-    
     const handleAvatar = e=>{
         if (e.target.files[0]){
         setAvatar({
@@ -48,6 +47,7 @@ const Login = ()=>{
         await setDoc(doc(db, "userchats", res.user.uid), {
             chats : []
         })
+        // await signInWithEmailAndPassword(auth , email , password)
         toast.success("Account created You can Login now!")
             }
 
@@ -57,7 +57,7 @@ const Login = ()=>{
         }finally{
 
             setLoading(false)
-            {<ChatList/>}
+            
         }
     }
 
@@ -77,21 +77,16 @@ const Login = ()=>{
         }finally{
             setLoading(false)
             console.log("done")
+            window.location.reload()
+            
         }
     }
 
 
     return (
         <div className="login">
-            <div className="item">
-                <h2>Welcome back,</h2>
-                <form onSubmit={handleLogin}>
-                    <input type="text" placeholder="Email" name="email" />
-                    <input type="password" placeholder="Password" name="password" />
-                    <button id="btn-90" disabled = {loading}>{loading ? "Loading..." : "Sign In"}</button>
-                </form>
-            </div>
-            <div className="separator"></div>
+
+            
             <div className="item">
             <h2>Create an Account</h2>
             <form onSubmit={handleRegister}>
@@ -102,7 +97,17 @@ const Login = ()=>{
                     <input type="Username" placeholder="Username" name="username" />
                     <input type="text" placeholder="Email" name="email" />
                     <input type="password" placeholder="Password" name="password" />
-                    <button disabled = {loading} >{loading ? "Loading..." : "Sign Up"}</button>
+                    <button disabled = {loading} >{loading ? "Sign Up" : "Sign Up"}</button>
+                </form>
+            </div>
+            <div className="separator"></div>
+
+            <div className="item">
+                <h2>Sign In</h2>
+                <form onSubmit={handleLogin}>
+                    <input type="text" placeholder="Email" name="email" />
+                    <input type="password" placeholder="Password" name="password" />
+                    <button id="btn-90" disabled = {loading}>{loading ? "Sign In" : "Sign In"}</button>
                 </form>
             </div>
         </div>
