@@ -1,81 +1,161 @@
-.addUsers{
+:root {
+    /* Define color scheme */
+    --bg-color-dark: #1E1E1E; /* Dark background for main container */
+    --primary-color: #1a73e8; /* Primary action color (blue) */
+    --input-bg-color: #2c2c2c; /* Background for input fields */
+    --input-text-color: #eaeaea; /* Light text color for input */
+    --button-bg-color: #ffffff; /* Button background */
+    --button-hover-bg-color: #e7e6e6; /* Button hover background */
+    --text-color-light: #ffffff; /* General text color */
+    --shadow-color: rgba(0, 0, 0, 0.5); /* Shadow for container and hover effects */
+    --shadow-hover: rgba(255, 255, 255, 0.5); /* Hover shadow */
+}
+
+.addUsers {
     padding: 30px;
-    background-color: rgb(0, 0, 0);
+    /* background-color: var(--bg-color-dark); */
+    background-color: white;
     width: max-content;
     height: max-content;
-    border-radius: 10px;
+    border-radius: 12px;
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     margin: auto;
-    color: white;
-    &:hover{
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.544);
-        transition: box-shadow 0.3s ease;
+    /* color: var(--text-color-light); */
+    /* box-shadow: 0 4px 15px var(--shadow-color); */
+    box-shadow: rgba(42, 41, 41, 0.5);
+    box-shadow: 0 6px 20px rgba(154, 154, 154, 0.279);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 6px 20px rgba(154, 154, 154, 0.379);
+        transform: translateY(-2px);
     }
-    
 
-    form{
+    form {
         display: flex;
-        gap: 20px;
-
-        input{
-            padding: 20px;
+        gap: 15px;
+        align-items: center;
+        
+        input {
+            padding: 15px;
             border-radius: 10px;
             border: none;
             outline: none;
+            /* background-color: var(--input-bg-color); */
+            /* color: var(--input-text-color); */
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            width: 200px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        button{
-            padding: 20px;
+        input:focus {
+            /* background-color: #3a3a3a;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        }
+
+        button {
+            padding: 15px 20px;
             border-radius: 10px;
             border: none;
-            background-color: #ffffff;
+            background-color: var(--button-bg-color);
             color: black;
             cursor: pointer;
-            &:hover{
-                background-color: #e7e6e6;
+            font-weight: 600;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--primary-color);
+            color: white;
+            &:hover {
+                /* background-color: var(--button-hover-bg-color); */
+                background-color:  #1a73e8e2;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
         }
-    }.new-user{
+    }
+
+    .new-user {
         margin-top: 20px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         border-radius: 12px;
-        padding: 10px;
-        &:hover{
-            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.544);
+        padding: 10px 15px;
+        /* background-color: #282828; */
+        transition: box-shadow 0.3s ease;
+        border : var(--primary-color) solid 1px;
+        &:hover {
+            box-shadow: 0 4px 12px var(--shadow-hover);
         }
-        
-        .user-detail{
+
+        .user-detail {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
 
-            img{
+            img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
                 object-fit: cover;
+                border: 2px solid var(--primary-color);
+            }
+
+            .username {
+                color: var(--text-color-light);
+                font-weight: 500;
             }
         }
-        button{
-            padding: 10px;
-            border-radius: 10px;
+
+        button {
+            padding: 10px 15px;
+            border-radius: 8px;
             border: none;
-            background-color: #1a73e8;
+            background-color: var(--primary-color);
             color: white;
+            font-weight: 500;
             cursor: pointer;
-            background-color: #ffffff;
-            color: black;
-            cursor: pointer;
-            &:hover{
-                background-color: #e7e6e6;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            
+            &:hover {
+                background-color: #135ab3;
+                transform: scale(1.05);
             }
+        }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .addUsers {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 15px;
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .new-user {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        .user-detail {
+            gap: 10px;
         }
     }
 }

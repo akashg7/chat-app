@@ -8,9 +8,10 @@
     flex-direction: column;
     align-items: center;
     /* background-color: #2f2e2e; */
-    background-color: rgb(12, 12, 12);
+    /* background-color: rgb(12, 12, 12); */
+    background-color: white;
     padding: 30px;
-    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521);
+    box-shadow: 0 4px 12px rgba(123, 121, 121, 0.521);
     width: 300px;
     /* position: absolute; */
     top: 255px;
@@ -18,7 +19,10 @@
     right: 0;
     left: 0;
     margin: auto;
-  }
+  } 
+  /* :hover{
+    box-shadow: 0 4px 12px rgba(123, 121, 121, 0.521);
+  } */
 
   .profile-picture {
     width: 120px;
@@ -27,14 +31,17 @@
     border-radius: 50%;
     object-fit: cover;
     margin-top: -60px; /* Adjust this to overlap the image over the card */
-    box-shadow: 0 4px 8px rgb(107, 104, 104); /* Give a subtle shadow to the profile picture */
+    /* box-shadow: 0 4px 8px rgb(107, 104, 104); Give a subtle shadow to the profile picture */
+    box-shadow: 0 4px 8px #00000085; /* Give a subtle shadow to the profile picture */
   }
-  
+  /* background-color: var(--secondary-color); */
+
+  /* #E6E8F1 */
   .profile-name {
     font-size: 20px;
     margin: 15px 0 5px 0;
     /* color: #333;  */
-    color: white;
+    /* color: white; */
     text-align: center;
   }
   
@@ -42,7 +49,7 @@
   .profile-email {
     font-size: 16px;
     /* color: #333; */
-    color: white;
+    /* color: white; */
     border-radius: 8px;
     padding: 5px 10px;
     margin-top: 10px;
@@ -51,21 +58,19 @@
   
   .logout{
     margin-top: 50px;
+    width: 50%;
     padding: 15px;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
     border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
     cursor: pointer;
-    /* border-color: black; */
-    border-width: 2px;
-    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521)
+    font-weight: 500;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   .logout:hover{
-    background-color: black;
-    color : white;
-    box-shadow: 0 4px 12px rgba(222, 222, 222, 0.521)
-    /* border-color: white; */
+    box-shadow: 0 4px 12px rgba(26, 25, 25, 0.121);
+    background-color: var(--hover-color);
   }
 
 
